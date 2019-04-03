@@ -17,5 +17,5 @@ docker run --rm -it -v %cd%:/share --workdir /share -e "DOCKER_HOST=tcp://docker
 SHARE_PATH ?= $(shell pwd)
 
 run:
-  docker run -v $(SHARE_PATH):/project my-container
+  docker run -v "$(SHARE_PATH):/project" my-container
 ```
