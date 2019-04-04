@@ -1,7 +1,7 @@
 FROM docker:edge
 
 RUN apk update && \
-  apk add make py-pip
+  apk add gcc make py-pip
 
 RUN pip install docker-compose
 
