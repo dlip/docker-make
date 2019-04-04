@@ -1,9 +1,8 @@
 FROM docker:edge
 
-RUN apk update
-RUN apk add make
+RUN apk update && \
+  apk add make py-pip
 
-RUN mv /usr/local/bin/docker /usr/local/bin/docker-bin
-ADD docker-entrypoint.sh /usr/local/bin/docker
+RUN pip install docker-compose
 
 ENTRYPOINT ["make"]
